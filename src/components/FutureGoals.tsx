@@ -14,7 +14,7 @@ export function FutureGoals() {
               <div className="absolute inset-0 bg-friends-nude rounded-lg transform translate-x-4 translate-y-4 opacity-20"></div>
               {/* Frame with polaroid effect */}
               <div className="relative bg-white p-3 rounded shadow-xl transform -rotate-2 hover:rotate-0 transition-transform duration-300">
-                <img src="/IMG_6906.jpg" alt="Friends umbrella illustration" className="w-full h-auto rounded" />
+                <img src="/IMG_6906.JPG" alt="Friends umbrella illustration" className="w-full h-auto rounded" />
                 {/* Polaroid caption */}
                 <div className="text-center pt-3 pb-1">
                   <p className="font-friends text-friends-maroon text-sm">

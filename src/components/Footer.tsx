@@ -1,12 +1,21 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { CoffeeIcon, HeartIcon, MailIcon, GithubIcon, LinkedinIcon, SendIcon } from 'lucide-react';
+import { Notification } from './Notification';
 export function Footer() {
   const [email, setEmail] = useState('');
-  const handleSubmit = e => {
+  const [showNotification, setShowNotification] = useState(false);
+  const [submittedEmail, setSubmittedEmail] = useState('');
+  
+  const handleSubmit = (e:any) => {
     e.preventDefault();
     // Handle form submission here
-    alert(`Thank you! We'll be in touch at: ${email}`);
+    setSubmittedEmail(email);
+    setShowNotification(true);
     setEmail('');
+  };
+
+  const handleCloseNotification = () => {
+    setShowNotification(false);
   };
   return <footer className="bg-friends-maroon text-white py-10 relative overflow-hidden">
       {/* Decorative background patterns */}
@@ -14,9 +23,22 @@ export function Footer() {
       <div className="absolute bottom-0 left-0 w-full h-2 bg-friends-nude opacity-30"></div>
       <div className="absolute top-1/2 left-10 w-16 h-16 rounded-full bg-white opacity-5 transform -translate-y-1/2"></div>
       <div className="absolute top-1/2 right-10 w-16 h-16 rounded-full bg-white opacity-5 transform -translate-y-1/2"></div>
-      {/* Monica's door frame directly in the footer */}
-      <div className="absolute top-0 right-0 w-24 h-auto opacity-20">
-        <img src="/IMG_6899.jpg" alt="Monica's door frame" className="w-full h-auto" />
+      {/* Left side silhouette */}
+      <div className="absolute bottom-0 left-0 w-40 h-32 opacity-50">
+        <img 
+          src="/IMG_6890.png" 
+          alt="Friends silhouette" 
+          className="w-full h-full object-cover filter" 
+        />
+      </div>
+      
+      {/* Right side silhouette */}
+      <div className="absolute top-0 right-0 w-32 h-40 opacity-55">
+        <img 
+          src="/IMG_6890.png" 
+          alt="Friends silhouette" 
+          className="w-full h-full object-cover filter" 
+        />
       </div>
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col items-center justify-center">
@@ -31,13 +53,13 @@ export function Footer() {
             </form>
           </div>
           <div className="flex space-x-6 mb-6">
-            <a href="#" className="hover:text-friends-nude transition-colors transform hover:scale-110 transition-transform duration-300">
+            <a href="mailto:areejrazzaq00@gmail.com" className="hover:text-friends-nude transition-colors transform hover:scale-110 transition-transform duration-300">
               <MailIcon size={24} />
             </a>
-            <a href="#" className="hover:text-friends-nude transition-colors transform hover:scale-110 transition-transform duration-300">
+            <a href="https://github.com/areejrazzaq" target="_blank" className="hover:text-friends-nude transition-colors transform hover:scale-110 transition-transform duration-300">
               <GithubIcon size={24} />
             </a>
-            <a href="#" className="hover:text-friends-nude transition-colors transform hover:scale-110 transition-transform duration-300">
+            <a href="https://www.linkedin.com/in/areej-razzaq/" target="_blank" className="hover:text-friends-nude transition-colors transform hover:scale-110 transition-transform duration-300">
               <LinkedinIcon size={24} />
             </a>
           </div>
@@ -54,5 +76,10 @@ export function Footer() {
           </p>
         </div>
       </div>
+      <Notification 
+        isVisible={showNotification}
+        onClose={handleCloseNotification}
+        email={submittedEmail}
+      />
     </footer>;
 }

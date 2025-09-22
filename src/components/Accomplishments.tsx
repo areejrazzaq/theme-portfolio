@@ -3,16 +3,16 @@ import { CheckCircleIcon } from 'lucide-react';
 export function Accomplishments() {
   const achievements = [{
     title: 'Project Success',
-    description: 'Led development of a key application that increased efficiency by 40%'
+    description: 'Successfully delivered 10+ cross-functional projects from planning to deployment, ensuring timely delivery aligned with business requirements.'
   }, {
     title: 'Technical Mastery',
-    description: 'Became proficient in multiple programming languages and frameworks'
+    description: 'Expertise in Laravel, AWS (S3, Lambda, EC2), CI/CD pipelines, and scalable backend architectures, with proven impact in optimizing performance (35% faster APIs) and cutting costs (30% cloud savings).'
   }, {
-    title: 'Recognition',
-    description: "Received the 'Outstanding Contribution' award for innovative solutions"
+    title: 'Business Value Creation',
+    description: "Designed and implemented innovative solutions like an AI-powered lead management pipeline and agentic RAG system, boosting conversion rates and customer re-engagement."
   }, {
-    title: 'Problem Solver',
-    description: 'Resolved critical system issues that improved overall stability'
+    title: 'Driving Collective Success',
+    description: 'Recognition for leading high-performing teams and mentoring 90+ students through IEEE WIE bootcamps in cloud and software development.'
   }];
   return <section id="accomplishments" className="py-16 bg-white relative overflow-hidden">
       {/* Decorative background element */}
@@ -41,22 +41,22 @@ export function Accomplishments() {
             </div>)}
         </div>
         {/* Enhanced "I'm Fine" image styling */}
-        <div className="relative flex justify-center items-center">
+        {/* <div className="relative flex justify-center items-center">
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="w-40 h-40 rounded-full bg-friends-nude opacity-10 blur-md"></div>
-          </div>
-          <div className="relative z-10 transform hover:scale-105 transition-transform duration-300">
-            <div className="relative">
+          </div> */}
+          {/* <div className="relative z-10 transform hover:scale-105 transition-transform duration-300"> */}
+            {/* <div className="relative"> */}
               {/* Speech bubble effect */}
-              <div className="absolute -top-8 -right-4 w-6 h-6 bg-white transform rotate-45 shadow-md"></div>
-              <img src="/IMG_6904.jpg" alt="I'm Fine illustration" className="w-64 h-auto rounded-lg shadow-lg border-4 border-white" />
-            </div>
+              {/* <div className="absolute -top-8 -right-4 w-6 h-6 bg-white transform rotate-45 shadow-md"></div>
+              <img src="/IMG_6904.jpg" alt="I'm Fine illustration" className="w-64 h-auto rounded-lg shadow-lg border-4 border-white" /> */}
+            {/* </div> */}
             {/* Caption */}
-            <p className="text-center mt-4 text-friends-maroon italic font-medium">
+            {/* <p className="text-center mt-4 text-friends-maroon italic font-medium">
               "I'm totally fine with debugging at 2 AM"
-            </p>
-          </div>
-        </div>
+            </p> */}
+          {/* </div> */}
+        {/* </div> */}
       </div>
     </section>;
 }

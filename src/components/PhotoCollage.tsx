@@ -1,21 +1,25 @@
 import React from 'react';
 export function PhotoCollage() {
   const collageItems = [{
-    image: "/IMG_6915.jpg",
-    caption: 'When my code finally works after 5 hours of debugging'
-  }, {
-    image: "/IMG_6909.jpg",
-    caption: "Me explaining why my project needs 'just one more feature'"
-  }, {
-    image: "/IMG_6911.jpg",
-    caption: 'My relationship status with Stack Overflow'
-  }, {
-    image: "/IMG_6912.jpg",
-    caption: "Joey doesn't share code without proper comments!"
+    image: "/IMG_6904.jpg",
+    caption: 'I\'m totally fine with debugging at 2 AM'
   }, {
     image: "/IMG_6914.jpg",
     caption: 'How it feels when you merge without conflicts'
-  }];
+  },{
+    image: "/IMG_6919.JPG",
+    caption: "Me explaining why my project needs 'just one more feature'"
+  }, {
+    image: "/IMG_6925.JPG",
+    caption: 'Joey doesn\'t share code without proper comments!'
+  },  {
+    image: "/IMG_6923.JPG",
+    caption: "Happily ever after = 0 bugs in production"
+  },  {
+    image: "/IMG_6922.JPG",
+    caption: "I'll always be there for you!"
+  },
+];
   return <section className="py-16 bg-white relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-friends-nude opacity-10"></div>
@@ -27,13 +31,13 @@ export function PhotoCollage() {
           </h2>
           <p className="text-lg max-w-2xl mx-auto">
             Just like the Friends gang had their photo frames around Monica's
-            peephole, here's a glimpse into my journey.
+            peephole, here's a glimpse of my favorite clips that I find hilarious and relate to.
           </p>
         </div>
         {/* Photo collage grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Main large image */}
-          <div className="md:col-span-2 md:row-span-2 relative group">
+          {/* <div className="md:col-span-2 md:row-span-2 relative group">
             <div className="relative transform rotate-1 hover:rotate-0 transition-transform duration-300 shadow-xl">
               <div className="absolute inset-0 bg-friends-maroon opacity-10 rounded-lg"></div>
               <div className="bg-white p-3 rounded-lg">
@@ -42,12 +46,11 @@ export function PhotoCollage() {
                   {collageItems[0].caption}
                 </p>
               </div>
-              {/* Decorative tape */}
               <div className="absolute -top-3 left-1/4 w-10 h-4 bg-friends-nude opacity-60 transform -rotate-12"></div>
             </div>
-          </div>
+          </div> */}
           {/* Smaller images */}
-          {collageItems.slice(1).map((item, index) => <div key={index} className="relative group">
+          {collageItems.map((item, index) => <div key={index} className="relative group">
               <div className={`relative transform ${index % 2 === 0 ? 'rotate-2' : '-rotate-2'} hover:rotate-0 transition-transform duration-300 shadow-lg`}>
                 <div className="absolute inset-0 bg-friends-maroon opacity-10 rounded-lg"></div>
                 <div className="bg-white p-2 rounded-lg">
