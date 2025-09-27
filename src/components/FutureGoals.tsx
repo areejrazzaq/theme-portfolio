@@ -6,18 +6,22 @@ export function FutureGoals() {
       <div className="absolute bottom-0 left-0 w-32 h-32 rounded-full bg-white opacity-5"></div>
       <div className="absolute top-20 right-20 w-24 h-24 rounded-full bg-white opacity-5"></div>
       <div className="container mx-auto px-4 max-w-5xl relative z-10">
-        <div className="flex flex-col md:flex-row items-center gap-12">
-          <div className="md:w-1/2 order-2 md:order-1">
+        <div className="flex flex-col md:flex-row items-center gap-6 md:gap-12">
+          <div className="w-full md:w-1/2 order-2 md:order-1 max-w-sm md:max-w-none mx-auto md:mx-0">
             {/* Enhanced umbrella illustration */}
             <div className="relative">
               {/* Layered shadow effect */}
               <div className="absolute inset-0 bg-friends-nude rounded-lg transform translate-x-4 translate-y-4 opacity-20"></div>
               {/* Frame with polaroid effect */}
-              <div className="relative bg-white p-3 rounded shadow-xl transform -rotate-2 hover:rotate-0 transition-transform duration-300">
-                <img src="/IMG_6906.JPG" alt="Friends umbrella illustration" className="w-full h-auto rounded" />
+              <div className="relative bg-white p-2 md:p-3 rounded shadow-xl transform -rotate-2 hover:rotate-0 transition-transform duration-300">
+                <img 
+                  src="/IMG_6906.JPG" 
+                  alt="Friends umbrella illustration" 
+                  className="w-full h-auto rounded max-h-48 sm:max-h-64 md:max-h-80 lg:max-h-96 object-cover" 
+                />
                 {/* Polaroid caption */}
-                <div className="text-center pt-3 pb-1">
-                  <p className="font-friends text-friends-maroon text-sm">
+                <div className="text-center pt-2 md:pt-3 pb-1">
+                  <p className="font-friends text-friends-maroon text-xs md:text-sm">
                     The one where I achieve my goals
                   </p>
                 </div>
@@ -27,7 +31,7 @@ export function FutureGoals() {
               <div className="absolute -bottom-2 right-1/4 w-8 h-3 bg-friends-nude opacity-60 transform rotate-12"></div>
             </div>
           </div>
-          <div className="md:w-1/2 order-1 md:order-2">
+          <div className="w-full md:w-1/2 order-1 md:order-2">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
               Season 6-8: Future Goals
             </h2>

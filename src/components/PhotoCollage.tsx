@@ -2,12 +2,16 @@ import { useState, useRef, useEffect } from "react";
 export function PhotoCollage() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [clickedIndex, setClickedIndex] = useState<number | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
 
   const handleMouseEnter = (index: number) => {
-    setHoveredIndex(index);
+    // Don't show videos on mobile screens
+    if (!isMobile) {
+      setHoveredIndex(index);
+    }
   };
 
   const handleMouseLeave = () => {
@@ -15,13 +19,27 @@ export function PhotoCollage() {
   };
 
   const handleClick = (index: number) => {
-    setClickedIndex(clickedIndex === index ? null : index);
+    // Don't show videos on mobile screens
+    if (!isMobile) {
+      setClickedIndex(clickedIndex === index ? null : index);
+    }
   };
 
   const handleClosePIP = () => {
     setHoveredIndex(null);
     setClickedIndex(null);
   };
+
+  // Check if screen is mobile/tablet size
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth < 768); // md breakpoint
+    };
+    
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
+    return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
 
   // Auto-close PIP when scrolling out of collage section
   useEffect(() => {
@@ -100,8 +118,8 @@ export function PhotoCollage() {
       ref={sectionRef}
       className="py-16 bg-white relative overflow-hidden"
     >
-      {/* Picture-in-Picture Video Popup */}
-      {(hoveredIndex !== null || clickedIndex !== null) && (
+      {/* Picture-in-Picture Video Popup - Only show on desktop */}
+      {!isMobile && (hoveredIndex !== null || clickedIndex !== null) && (
         <div
           className="fixed bottom-4 right-4 z-50"
           style={{
@@ -194,7 +212,7 @@ export function PhotoCollage() {
           </p>
         </div>
         {/* Photo collage grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {/* Main large image */}
           {/* <div className="md:col-span-2 md:row-span-2 relative group">
             <div className="relative transform rotate-1 hover:rotate-0 transition-transform duration-300 shadow-xl">
@@ -227,7 +245,7 @@ export function PhotoCollage() {
                   <img
                     src={item.image}
                     alt={`Friends themed image ${index + 2}`}
-                    className="w-full h-auto rounded-md"
+                    className="w-full h-auto rounded-md max-h-64 md:max-h-80 lg:max-h-96 object-cover"
                   />
                   <p className="mt-2 text-sm font-friends text-friends-maroon text-center">
                     {item.caption}
