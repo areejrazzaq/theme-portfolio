@@ -1,21 +1,28 @@
-import React from 'react';
-import { Header } from './components/Header';
-import { Introduction } from './components/Introduction';
-import { Accomplishments } from './components/Accomplishments';
-import { FutureGoals } from './components/FutureGoals';
-import { SoftSkills } from './components/SoftSkills';
-import { PhotoCollage } from './components/PhotoCollage';
-import { Footer } from './components/Footer';
+import { Header } from "./components/Header";
+import { Hero } from "./components/Hero";
+import { Introduction } from "./components/Introduction";
+import { Projects } from "./components/Projects";
+import { WidgetDashboard } from "./components/WidgetDashboard";
+import { Footer } from "./components/Footer";
+import { ThemeProvider } from "./components/ui/theme-context";
+
 export function App() {
-  return <div className="w-full min-h-screen bg-white">
-      <Header />
-      <main className="w-full">
-        <Introduction />
-        <Accomplishments />
-        <FutureGoals />
-        <SoftSkills />
-        <PhotoCollage />
-      </main>
-      <Footer />
-    </div>;
+  return (
+    <ThemeProvider>
+      <div className="w-full min-h-screen bg-background text-foreground">
+        <Header />
+        <main className="w-full">
+          <Hero />
+          <Introduction />
+          {/* <Accomplishments /> */}
+          <Projects />
+          {/* <Skills /> */}
+          {/* <Process /> */}
+          {/* <FutureGoals /> */}
+          <WidgetDashboard />
+          <Footer />
+        </main>
+      </div>
+    </ThemeProvider>
+  );
 }

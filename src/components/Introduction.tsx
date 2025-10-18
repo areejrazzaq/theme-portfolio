@@ -1,80 +1,108 @@
-import React from "react";
+import { Circle, MoreHorizontal } from "lucide-react";
+import { Tilt } from "../components/ui/tilt";
+
+
 export function Introduction() {
   return (
-    <section id="introduction" className="py-16 bg-friends-beige">
-      <div className="container mx-auto px-4 max-w-5xl">
-        <div className="flex flex-col md:flex-row items-center gap-8">
-          <div className="md:w-1/2">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-friends-maroon">
-              Season 1: Pilot
-            </h2>
-            <div className="relative mb-6">
-              <div className="absolute -left-4 top-0 bottom-0 w-1 bg-friends-maroon"></div>
-              <p className="text-lg mb-4">
-                Coffee in one hand, keyboard in the other that’s me, <strong>AREEJ
-                RAZZAQ </strong>👋🏻
-              </p>
-              <p className="text-lg mb-4 text-justify">
-                What started as curiosity evolved into a passion for
-                problem-solving and creating solutions that make a difference.
-                Like Chandler who eventually found his true calling, I knew CS
-                was where I belonged.
-              </p>
-              <p className="text-lg mb-4 text-justify">
-                My journey into Computer Science began when I realized
-                technology is like that reliable friend who's always there for
-                you. What started as curiosity soon became a full-blown
-                obsession with problem-solving and creating solutions that
-                actually matter. Like Chandler eventually figuring out his
-                thing, I knew CS was where I truly belonged.
-              </p>
-              <p className="text-lg mb-4 text-justify">
-                Back in 2023, I wrapped up my Software Engineering degree from
-                Pakistan's top institution, NUST, think of it as my ‘college
-                Monica moment,’ the start of a lifelong passion.
-              </p>
-            </div>
-            <div className="mt-8 flex justify-start">
-              <a
-                href="#accomplishments"
-                className="px-6 py-3 bg-friends-maroon text-white rounded-md hover:bg-opacity-90 transition-colors"
-              >
-                Next Episode →
-              </a>
-            </div>
-          </div>
-          <div className="md:w-1/2 relative">
-            <div className="relative">
-              {/* Decorative coffee cup ring stain behind the video */}
-              <div className="absolute -left-4 -top-4 w-16 h-32 rounded-full bg-friends-nude opacity-20 blur-sm"></div>
-              <div className="relative z-10 aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-xl border-4 border-friends-nude transform rotate-1 hover:rotate-0 transition-transform duration-300">
-                <iframe
-                  src="https://www.youtube.com/embed/ps9IaSy966Y"
-                  title="Introduction Video"
-                  className="w-full h-full"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-              </div>
-              {/* Central Perk Logo with enhanced styling */}
-              <div className="z-20 absolute -bottom-8 -right-8 w-32 h-32 rounded-full p-1 bg-white shadow-lg transform rotate-6 hover:rotate-0 transition-all duration-300 hover:scale-105">
-                <div className="w-full h-full rounded-full overflow-hidden border-4 border-friends-maroon">
-                  <img
-                    src="/IMG_6903.jpg"
-                    alt="Central Perk Logo"
-                    className="w-full h-full object-cover"
+    <section
+      id="about-me"
+      className="bg-background py-5 relative overflow-hidden"
+    >
+      {/* Decorative background elements */}
+      <div className="absolute top-0 right-0 w-64 h-64 bg-primary opacity-5 rounded-full transform translate-x-1/3 -translate-y-1/3"></div>
+      <div className="absolute bottom-0 left-0 w-48 h-48 bg-accent opacity-10 rounded-full transform -translate-x-1/3 translate-y-1/3"></div>
+
+      <div className="container mx-auto px-4 max-w-4xl relative z-10">
+        
+
+        <Tilt rotationFactor={8} isRevese>
+        <div
+          style={{
+            borderRadius: '12px',
+          }}
+          className='flex max-w-50 flex-col overflow-hidden border border-zinc-950/10 bg-white dark:border-zinc-50/10 dark:bg-zinc-900'
+        >
+          <div className="bg-card border border-border rounded-lg shadow-2xl overflow-hidden">
+              {/* Terminal Title Bar */}
+              <div className="bg-dark border-b border-border px-4 py-3 flex items-center justify-between">
+                <div className="flex items-center space-x-2">
+                  <Circle
+                    size={12}
+                    className="text-foreground fill-foreground"
                   />
+                  <div className="flex space-x-1">
+                    <div className="w-2 h-2 bg-popover rounded-full"></div>
+                    <div className="w-2 h-2 bg-popover rounded-full"></div>
+                    <div className="w-2 h-2 bg-muted-foreground rounded-full"></div>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="text-foreground text-sm font-mono">
+                    ══ CODE FILES ══
+                  </div>
+                  <MoreHorizontal size={16} className="text-muted-foreground" />
                 </div>
               </div>
-              {/* Decorative dots pattern */}
-              <div className="absolute -right-8 top-1/2 transform -translate-y-1/2 flex flex-col space-y-2">
-                <div className="w-2 h-2 rounded-full bg-friends-maroon"></div>
-                <div className="w-2 h-2 rounded-full bg-friends-maroon"></div>
-                <div className="w-2 h-2 rounded-full bg-friends-maroon"></div>
+
+              {/* Terminal Content */}
+              <div
+                className="bg-dark panel p-6 text-base text-foreground leading-relaxed relative text-justify"
+                style={{ fontFamily: "VT323, Fira Code, monospace !important" }}
+              >
+                <div className="space-y-3 w-full">
+                  <div className="text-white">who am I ? (from my POV)</div>
+
+                  <div className="text-white">
+                    Coffee in one hand, keyboard in the other that's me, AREEJ
+                    RAZZAQ 👋🏻
+                  </div>
+
+                  <div className="text-white">
+                    It all started with curiosity and a deep love for figuring
+                    things out. Like Chandler Bing finding his niche, I found
+                    mine in Computer Science — a perfect blend of logic,
+                    creativity, and caffeine. 💡
+                  </div>
+
+                  <div className="text-white">
+                    Graduating from NUST in 2023 felt like my Friends finale
+                    moment — emotional, exciting, and just the beginning of
+                    something bigger. Since then, I’ve been building, learning,
+                    and refining my craft one line of code at a time.
+                  </div>
+
+                  <div className="text-white">
+                    When it comes to problem-solving, I think like House MD, act
+                    like Harvey Specter, and occasionally talk to my code like
+                    Walter White convincing chemistry to behave. 🧠🔥
+                  </div>
+                  <div className="text-white">
+                    I love creating digital experiences that tell a story, solve
+                    real problems, and make technology feel just a little more
+                    human. 🌐💫
+                  </div>
+                </div>                
               </div>
             </div>
+          <div className='p-2 text-right'>
+            <h1 className='font-mono leading-snug text-zinc-950 dark:text-zinc-50'>
+             Me in a nutshell
+            </h1>
+            <p className='text-zinc-700 dark:text-zinc-400'>Code. Coffee. Chill.</p>
           </div>
         </div>
+      </Tilt>
+
+        {/* Continue Button */}
+        {/* <div className="mt-6 text-center">
+          <a
+            href="#projects"
+            className="inline-flex items-center px-8 py-4 bg-primary text-primary-foreground rounded-lg hover:bg-accent-foreground transition-all duration-300 transform hover:scale-105 shadow-lg"
+          >
+            Continue the Story
+            <ArrowRightIcon className="ml-2" size={18} />
+          </a>
+        </div> */}
       </div>
     </section>
   );
