@@ -59,7 +59,7 @@ export function Connect() {
           data-aos="fade-down"
         >
           <HighlighterItem className="rounded-3xl p-6">
-            <div className="relative z-20 h-full overflow-hidden rounded-3xl border border-slate-200 bg-white dark:border-slate-800 dark:bg-black">
+            <div className="relative z-20 h-full overflow-hidden rounded-3xl border border-slate-200 bg-white">
               <Particles
                 className="absolute inset-0 -z-10 opacity-10 transition-opacity duration-1000 ease-in-out group-hover/item:opacity-100"
                 quantity={200}
@@ -79,25 +79,25 @@ export function Connect() {
                     </div>
                     <div
                       id="next-js"
-                      className="text-foreground border-ring absolute bottom-12 left-2 rounded-3xl border border-slate-400 bg-slate-200 px-2 py-1.5 text-xs opacity-50 dark:border-slate-600 dark:bg-slate-800"
+                      className="text-foreground border-ring absolute bottom-12 left-2 rounded-3xl border border-slate-400 bg-slate-200 px-2 py-1.5 text-xs opacity-50"
                     >
                       AI-driven systems
                     </div>
                     <div
                       id="react-js"
-                      className="text-foreground border-ring absolute left-2 top-20 rounded-3xl border border-slate-400 bg-slate-200 px-2 py-1.5 text-xs opacity-50 dark:border-slate-600 dark:bg-slate-800"
+                      className="text-foreground border-ring absolute left-2 top-20 rounded-3xl border border-slate-400 bg-slate-200 px-2 py-1.5 text-xs opacity-50 "
                     >
                       UI-UX
                     </div>
                     <div
                       id="typescript"
-                      className="text-foreground border-ring absolute bottom-20 right-1 rounded-3xl border border-slate-400 bg-slate-200 px-2 py-1.5 text-xs opacity-50 dark:border-slate-600 dark:bg-slate-800"
+                      className="text-foreground border-ring absolute bottom-20 right-1 rounded-3xl border border-slate-400 bg-slate-200 px-2 py-1.5 text-xs opacity-50 "
                     >
                       Web Application
                     </div>
                     <div
                       id="javascript"
-                      className="text-foreground border-ring absolute right-12 top-10 rounded-3xl border border-slate-400 bg-slate-200 px-2 py-1.5 text-xs opacity-50 dark:border-slate-600 dark:bg-slate-800"
+                      className="text-foreground border-ring absolute right-12 top-10 rounded-3xl border border-slate-400 bg-slate-200 px-2 py-1.5 text-xs opacity-50 "
                     >
                       Quick MVP
                     </div>
@@ -132,7 +132,7 @@ export function Connect() {
                         </span>
                       </h3>
                     </div>
-                    <p className="mb-4 text-slate-400">
+                    <p className="mb-4 text-slate-400 text-md md:text-lg">
                       Whether you have a project in mind, want to collaborate,
                       or just want to chat about technology—I'd love to hear
                       from you

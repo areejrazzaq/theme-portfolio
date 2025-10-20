@@ -76,7 +76,7 @@ export function Hero() {
           </div>
 
           {/* Right side - Interactive Icon Cloud */}
-          <div className="flex-1 lg:max-w-lg m-0">
+          <div className="flex-1 max-w-[75%] sm:max-w-full lg:max-w-lg m-0">
             <div className="relative">
               {/* Icon Cloud Container */}
               <div className="">

@@ -40,7 +40,7 @@ export function WidgetDashboard() {
         {/* Widget Grid */}
         <div className="space-y-2">
           {/* First Row - Profile, Activity, GitHub */}
-          <div className="xl:px-8 max-w-4xl mx-10">
+          <div className="xl:px-8 max-w-4xl md:mx-10">
             <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
               {/* GitHub Widget */}
               <a
@@ -366,7 +366,7 @@ export function WidgetDashboard() {
           </div>
 
           {/* Third Row - Social Media, Notes */}
-          <div className="xl:px-8 max-w-4xl mx-20">
+          <div className="xl:px-8 max-w-4xl md:mx-20">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {/* Social Media Widget */}
               <div className="md:col-span-1 bg-card rounded-3xl p-4 shadow-xl widget-hover border border-border">

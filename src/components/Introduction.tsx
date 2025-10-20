@@ -46,7 +46,7 @@ export function Introduction() {
 
               {/* Terminal Content */}
               <div
-                className="bg-dark panel p-6 text-base text-foreground leading-relaxed relative text-justify"
+                className="text-sm md:text-base bg-dark panel p-6 text-foreground leading-relaxed relative text-justify"
                 style={{ fontFamily: "VT323, Fira Code, monospace !important" }}
               >
                 <div className="space-y-3 w-full">
